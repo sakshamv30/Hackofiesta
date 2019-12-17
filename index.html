@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="./assets/js/countdown.js"></script>
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="./assets/css/style.less"
+    />
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="./assets/css/timeline.less"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hack-O-Fiesta</title>
+    <style>
+      /* customizable snowflake styling */
+      .snowflake {
+        color: #fff;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+        text-shadow: 0 0 5px #000;
+      }
+
+      @-webkit-keyframes snowflakes-fall {
+        0% {
+          top: -10%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      @-webkit-keyframes snowflakes-shake {
+        0%,
+        100% {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+        }
+        50% {
+          -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+        }
+      }
+      @keyframes snowflakes-fall {
+        0% {
+          top: -10%;
+        }
+        100% {
+          top: 100%;
+        }
+      }
+      @keyframes snowflakes-shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(80px);
+        }
+      }
+      .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+        -webkit-animation-duration: 10s, 3s;
+        -webkit-animation-timing-function: linear, ease-in-out;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -webkit-animation-play-state: running, running;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 10s, 3s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running;
+      }
+      .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s;
+      }
+      .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s;
+      }
+      .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, 0.5s;
+        animation-delay: 6s, 0.5s;
+      }
+      .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s;
+      }
+      .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s;
+      }
+      .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s;
+      }
+      .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s;
+      }
+      .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s;
+      }
+      .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 1s, 0s;
+        animation-delay: 1s, 0s;
+      }
+      .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s;
+      }
+      .snowflake:nth-of-type(10) {
+        left: 25%;
+        -webkit-animation-delay: 2s, 0s;
+        animation-delay: 2s, 0s;
+      }
+      .snowflake:nth-of-type(11) {
+        left: 65%;
+        -webkit-animation-delay: 4s, 2.5s;
+        animation-delay: 4s, 2.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+      <div class="snowflake">
+        ❅
+      </div>
+      <div class="snowflake">
+        ❆
+      </div>
+    </div>
+    <!-- <canvas></canvas> -->
+    <div class="page-wrapper">
+      <div class="hero-outer">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Home</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="sass.html">About Us</a></li>
+              <li><a href="#!">Schedule</a></li>
+              <li><a href="#!">Prizes</a></li>
+              <li><a href="#!">FAQ</a></li>
+              <li><a href="#!">Sponsors</a></li>
+              <li><a href="#!">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="hero">
+          <img src="./assets/img/undraw_up_to_date_rmbm.svg" alt="hero-image" />
+          <div class="hero-content">
+            <h1>Hack-O-Fiesta</h1>
+            <p class="z-depth-1" style="padding: 10px">
+              7 - 9 February, 2020. IIIT Lucknow, U.P.
+            </p>
+            <div id="countdown-container" class="   ">
+              <span id="months"></span>
+              <span id="days"></span>
+              <span id="hours"></span>
+              <span id="minutes"></span>
+              <span id="seconds"></span>
+            </div>
+            <a class="waves-effect waves-light btn"
+              ><i class="material-icons right">send</i>Register Now!</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="about-wrapper">
+          <img
+            src="./assets/img/undraw_visualization_c2ps.svg"
+            alt="about"
+            height="350px"
+          />
+          <div class="about-content">
+            <h1>About</h1>
+            <p>
+              Hack o fiesta is a student-held hackathon brought to you by Axios,
+              The Technical Club of IIIT Lucknow. We enable and encourage
+              budding as well as seasoned programmers to build usable and
+              functional software, a finished product that can aid individuals
+              and corporations alike.
+            </p>
+            <p>
+              This hackathon strives to explore the endless potential of
+              technology and its creators. You would be amazed at what a handful
+              of programmers can do, given a computer system and Three days.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section timeline-container">
+        <div class="timeline-wrapper">
+          <div class="container-fluid">
+            <div class="row example-split">
+              <h1
+                style="position: relative;
+                    left: 50%;
+                    transform: translate(-50%,-50%);"
+              >
+                Timeline
+              </h1>
+              <!-- <p>Small devices (tablets, 768px and up)</p> -->
+              <div class="timeline-div">
+                <ul class="timeline timeline-split">
+                  <li class="timeline-item period">
+                    <div class="timeline-info"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h2 class="timeline-title">February 7 2020</h2>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>9:00 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Opening ceremony</h3>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>10:00 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Coding Starts</h3>
+                    </div>
+                  </li>
+                  <li class="timeline-item period">
+                    <div class="timeline-info"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h2 class="timeline-title">February 8 2020</h2>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>1:00 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Lunch</h3>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>03:30 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">First Evaluation</h3>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>8:00 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Dinner</h3>
+                    </div>
+                  </li>
+                  <li class="timeline-item period">
+                    <div class="timeline-info"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h2 class="timeline-title">February 9 2020</h2>
+                    </div>
+                  </li>
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>8:00 AM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Breakfast</h3>
+                    </div>
+                  </li>
+
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>2:00 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Final Evaluation</h3>
+                    </div>
+                  </li>
+
+                  <li class="timeline-item">
+                    <div class="timeline-info">
+                      <span>3:30 PM</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                      <h3 class="timeline-title">Presentation</h3>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="prizes-wrapper">
+          <h1>Prizes</h1>
+          <div class="prize-cards-wrapper-outer">
+            <div class="prize-cards-wrapper">
+              <div class="card-panel rupee-sign">
+                <!-- ₹ -->
+                <p class="prize-money">30,000</p>
+                <p class="">Worth Przes</p>
+              </div>
+            </div>
+            <div class="prize-cards-wrapper">
+              <div class="card-panel rupee-sign">
+                <!-- ₹ -->
+                <p class="prize-money">15,000</p>
+                <p class="">Worth Przes</p>
+              </div>
+            </div>
+            <div class="prize-cards-wrapper">
+              <div class="card-panel rupee-sign">
+                <!-- ₹ -->
+                <p class="prize-money">10,000</p>
+                <p class="">Worth Przes</p>
+              </div>
+            </div>
+            <div class="prize-cards-wrapper">
+              <div class="card-panel rupee-sign">
+                <!-- ₹ -->
+                <p class="prize-money">5,000</p>
+                <p class="">Worth Przes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-wrapper section">
+        <div class="faq-inner-wrapper">
+          <h1>FAQ</h1>
+          <p>
+            Many a times it happens that what we are doubtful about, has been
+            the same for someone else and hence already answered. Please find
+            below a list of such questions and their answers:
+          </p>
+          <div class="faq-accordion">
+            <ul class="collapsible popout">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>What is a
+                  hackathon?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >A hackathon is a marathon-themed event for student
+                    developers, where they work collectively on a project. The
+                    projects are usually based on a theme decided by the
+                    organisers beforehand, and are made to solve real world
+                    problems.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>Who can attend?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >Beginners, pros, literally everyone. Anyone with a passion
+                    for learning, or primarily, undergraduate programmers are
+                    welcome to attend. Even if you can’t code, we can teach you
+                    or you can help out in the hackathon.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>How can I help?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >We appreciate all who want to support our cause and we
+                    definitely need your awesome skills. Even if someone can’t
+                    code, volunteers can support the organizing team during the
+                    hackathon with various tasks. It’s always good to have a
+                    helping hand.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>Why Social Good?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >Well, why the bug not? It is to show gratitude and help out
+                    people who don’t program, by building useful software for
+                    them. It’s high time to give back to society, and this
+                    hackathon is the perfect opportunity for that.
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>What can I build?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >Possibly something that resonates with the theme of the
+                    event, that is social good. It can be a website, software,
+                    an applet or maybe even a piece of hardware. We’d love to
+                    see anything that solves a social problem or goes with our
+                    agenda.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">arrow_drop_down</i>What if I don’t
+                  have a team or an Idea?
+                </div>
+                <div class="collapsible-body">
+                  <span
+                    >Even if you don’t have a team or an idea, that's totally
+                    fine! We'll have a team forming event right before
+                    development starts. We’ll also have an ideation event where
+                    everyone will be brainstorming to generate new ideas.
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script src="./assets/js/snowflake.js"></script> -->
+  <script src="./assets/js/main.js"></script>
+</html>
