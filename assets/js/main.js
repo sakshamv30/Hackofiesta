@@ -8,9 +8,6 @@ function setCountdown() {
       var data = data.replace("and", " ");
     }
     document.querySelector("#countdown-container").innerHTML = data;
-    console.log(
-      (document.querySelector("#countdown-container").innerHTML = data)
-    );
   }, 1000);
 }
 setCountdown();

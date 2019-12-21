@@ -52,7 +52,7 @@ body {
         height: 65vh;
       }
       .hero-content {
-        height: 55vh;
+        // height: 55vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -83,8 +83,6 @@ body {
         -webkit-text-fill-color: transparent;
       }
       #countdown-container {
-        width: 90%;
-        // overflow: auto;
         background-image: linear-gradient(
           45deg,
           rgb(163, 12, 12),
@@ -102,6 +100,33 @@ body {
           align-items: center;
           justify-content: center;
           font-weight: bold;
+        }
+      }
+    }
+    .sponsor-list {
+      display: flex;
+      flex-direction: column;
+      .sponsor-category {
+        margin-top: 80px;
+        img {
+          height: 10vw;
+        }
+        .sponsor-images {
+          margin-top: 50px;
+        }
+        .patreon {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          #balsamiq {
+            background-color: #df0000;
+            padding: 10px;
+            border-radius: 15px;
+          }
+          img {
+            height: 7vw;
+            margin-left: 20px;
+          }
         }
       }
     }
@@ -153,6 +178,9 @@ body {
   padding-bottom: 80px;
   h1 {
     width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
   & h1::after {
     content: "";
@@ -189,14 +217,15 @@ body {
   align-items: center;
   margin-bottom: 80px;
   h1 {
-    position: relative;
     top: -100px;
   }
   .prize-cards-wrapper-outer {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     .prize-cards-wrapper {
       margin-left: 40px;
+      margin-top: 40px;
       background: #3c7d91;
       box-shadow: #0000008f 1px 0px 20px;
       transition: all 0.6s ease-in-out;
@@ -205,7 +234,8 @@ body {
       }
       .prize-money {
       }
-      p {
+      p,
+      h5 {
         background-image: linear-gradient(
           45deg,
           rgb(15, 144, 153),
@@ -248,4 +278,85 @@ body {
 }
 .timeline-container {
   height: auto;
+}
+.contact {
+  .sponsorship-contact {
+    a {
+      background-image: linear-gradient(
+        45deg,
+        rgb(0, 129, 151),
+        rgb(108, 148, 0)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 20px;
+      display: block;
+    }
+  }
+}
+footer {
+  padding: 30px;
+  .social-links {
+    margin-top: 25px;
+    a {
+      color: rgb(0, 73, 95);
+      font-size: 30px;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+      &:hover {
+        color: rgba(0, 0, 0, 0.644);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .hero {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    img {
+      height: 0px !important;
+    }
+  }
+  #about {
+    img {
+      height: 0px !important;
+    }
+  }
+  .page-wrapper {
+    padding: 0px 7vw;
+  }
+  .about-content {
+    width: 100% !important;
+  }
+  .faq-inner-wrapper {
+    .faq-accordion {
+      width: 100% !important;
+    }
+    p {
+      width: 70% !important;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .page-wrapper {
+    padding: 0px 2vw;
+  }
+  .faq-inner-wrapper {
+    .faq-accordion {
+      width: 100% !important;
+    }
+    p {
+      width: 100% !important;
+    }
+  }
+  .sponsor-category {
+    margin-top: 80px;
+    img {
+      height: 15vw !important;
+    }
+  }
 }

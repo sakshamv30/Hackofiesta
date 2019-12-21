@@ -30,6 +30,10 @@
       rel="stylesheet"
     />
     <title>Hack-O-Fiesta</title>
+    <script
+      src="https://kit.fontawesome.com/742a48addb.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       /* customizable snowflake styling */
       .snowflake {
@@ -203,12 +207,12 @@
           <div class="nav-wrapper">
             <a href="/" class="brand-logo">Home</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="sass.html">About Us</a></li>
-              <li><a href="#!">Schedule</a></li>
-              <li><a href="#!">Prizes</a></li>
-              <li><a href="#!">FAQ</a></li>
-              <li><a href="#!">Sponsors</a></li>
-              <li><a href="#!">Contact Us</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#timeline">Schedule</a></li>
+              <li><a href="#prizes">Prizes</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#sponsors">Sponsors</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
         </nav>
@@ -232,7 +236,7 @@
           </div>
         </div>
       </div>
-      <div class="section">
+      <div class="section" id="about">
         <div class="about-wrapper">
           <img
             src="./assets/img/undraw_visualization_c2ps.svg"
@@ -257,7 +261,7 @@
         </div>
       </div>
 
-      <div class="section timeline-container">
+      <div class="section timeline-container" id="timeline">
         <div class="timeline-wrapper">
           <div class="container-fluid">
             <div class="row example-split">
@@ -372,44 +376,48 @@
           </div>
         </div>
       </div>
-      <div class="section">
+      <div class="section" id="prizes">
+        <h1>Prizes</h1>
         <div class="prizes-wrapper">
-          <h1>Prizes</h1>
           <div class="prize-cards-wrapper-outer">
             <div class="prize-cards-wrapper">
               <div class="card-panel rupee-sign">
                 <!-- ₹ -->
                 <p class="prize-money">30,000</p>
-                <p class="">Worth Przes</p>
+                <p class="">Worth Prizes</p>
+                <h5 class="">1st</h5>
               </div>
             </div>
             <div class="prize-cards-wrapper">
               <div class="card-panel rupee-sign">
                 <!-- ₹ -->
                 <p class="prize-money">15,000</p>
-                <p class="">Worth Przes</p>
+                <p class="">Worth Prizes</p>
+                <h5 class="">2st</h5>
               </div>
             </div>
             <div class="prize-cards-wrapper">
               <div class="card-panel rupee-sign">
                 <!-- ₹ -->
                 <p class="prize-money">10,000</p>
-                <p class="">Worth Przes</p>
+                <p class="">Worth Prizes</p>
+                <h5 class="">3rd</h5>
               </div>
             </div>
             <div class="prize-cards-wrapper">
               <div class="card-panel rupee-sign">
                 <!-- ₹ -->
                 <p class="prize-money">5,000</p>
-                <p class="">Worth Przes</p>
+                <p class="">Worth Prizes</p>
+                <h5 class="">Misc.</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="faq-wrapper section">
+      <div class="faq-wrapper section" id="faq">
+        <h1>FAQ</h1>
         <div class="faq-inner-wrapper">
-          <h1>FAQ</h1>
           <p>
             Many a times it happens that what we are doubtful about, has been
             the same for someone else and hence already answered. Please find
@@ -503,6 +511,82 @@
             </ul>
           </div>
         </div>
+      </div>
+      <div class="section contact">
+        <div class="sponsorship-contact">
+          <h4>Want to sponsor us? Shoot us an E-mail</h4>
+          <a
+            class="hack-mail"
+            style="font-size: 20px;display: block"
+            href="mailto:hack@iiitl.ac.in"
+            >hack@iiitl.ac.in</a
+          >
+          <a class="hack-mail" style="font-size: 20px;" href="#"
+            >Download Brochure</a
+          >
+        </div>
+      </div>
+      <div class="section sponsor-section" id="sponsors">
+        <h1>Our Sponsors</h1>
+        <div class="sponsor-list">
+          <div class="sponsor-category">
+            <h3>Platinum Sponsors</h3>
+            <div class="sponsor-images">
+              <img
+                src="https://hackofiesta.github.io/assets/images/sponsor-logo-1.png"
+              />
+              <img
+                src="https://hackofiesta.github.io/assets/images/sponsor-logo-2.png"
+              />
+              <img src="https://getsetfoss.tech/assets/img/code.png" />
+            </div>
+          </div>
+          <div class="sponsor-category">
+            <h3>Patreon Sponsors</h3>
+            <div class="sponsor-images patreon">
+              <img
+                src="https://hackofiesta.github.io/assets/images/sponsor-logo-3.png"
+              />
+              <img
+                src="https://hackofiesta.github.io/assets/images/sponsor-logo-4.png"
+              />
+              <img
+                src="https://static.balsamiq.cloud/1345/landing/images/2bcadf409f1d0ebd680e0f127db3aea4.svg"
+                id="balsamiq"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="contact">
+        <footer>
+          <div class="social-links">
+            <h5>Follow us on social media!</h5>
+            <a
+              href="https://www.facebook.com/Hack-O-Fiesta-1532336783564103/"
+              target="blank"
+            >
+              <i class="fab fa-facebook-square" aria-hidden="true"></i
+            ></a>
+            <a href="https://twitter.com/hackofiesta" target="blank"
+              ><i class="fab fa-twitter-square" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/hackofiesta"
+              target="blank"
+              ><i class="fab fa-linkedin" aria-hidden="true"></i
+            ></a>
+            <p>
+              Have a question, please visit the FAQ section. Not found, not to
+              worry, feel free to ask your doubts by sending us <a style="font-size: 18px;" href="mailto:hack@iiitl.ac.in"
+              ><i class="fas fa-envelope"></i
+            > at hack@iiitl.ac.in</a>
+            </p>
+          </div>
+          <div style="margin-top: 25px" class="copyright">
+            <b>&copy;Hackofiesta 2020</b>. All rights reserved.
+          </div>
+        </footer>
       </div>
     </div>
   </body>
