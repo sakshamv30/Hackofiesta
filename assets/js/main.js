@@ -1,7 +1,7 @@
 var data;
 function setCountdown() {
   setInterval(() => {
-    let timeLeft = countdown(new Date(2020, 2, 7));
+    let timeLeft = countdown(new Date(2020, 1, 7));
     data = timeLeft.toHTML();
     for (let i = 0; i < 5; i++) {
       var data = data.toLocaleString().replace(",", " ");
